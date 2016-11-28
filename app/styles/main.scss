@@ -1,0 +1,161 @@
+$icon-font-path: '../fonts/';
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
+body {
+  font-weight: 14px;
+}
+
+@font-face {
+  font-family: BebasNeueBold;
+  src: url("../fonts/BebasNeue\ Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal
+}
+
+@font-face {
+  font-family: BebasNeueRegular;
+  src: url("../fonts/BebasNeue\ Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal
+}
+
+@font-face {
+  font-family: BebasNeueBook;
+  src: url("../fonts/BebasNeue\ Book.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal
+}
+
+@font-face {
+  font-family: BebasNeueLight;
+  src: url("../fonts/BebasNeue\ Light.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal
+}
+
+.g-slider {
+  padding: 50px 0;
+  background: #cdcdef;
+  font-family: BebasNeueRegular;
+  .g-slider-count {
+    color: white;
+    display: block;
+    padding-top: 180px;
+    font-size: 5.71em;
+    .g-slider-nr {
+      font-family: BebasNeueBold;
+    }
+    .g-slider-of {
+      color: white;
+      line-height: 3em;
+      font-size: 0.26em;
+      vertical-align: top;
+    }
+  }
+  .g-slider-desriptions {
+    > ul {
+      list-style: none;
+      li {        
+        opacity:0;
+        display: none;
+        transition: opacity 0.01s ease-in-out;
+        &.g-description-active {
+          opacity:1;
+          visibility: visible;
+          display:block;
+          transition: opacity 0.27s ease-in-out; 
+        }
+        > div {
+          .g-description-logo {
+            height: 160px;
+          }
+          h3 {
+            font-size: 8.14em;
+            line-height: 1em;
+            span {
+              font-family: BebasNeueBook;
+            }
+          }
+          p {
+            font-size: 1.41em;
+          }
+        }
+
+      }
+    }
+  }
+  .g-slider-images {
+    min-height: 632px;
+    .g-slider-control {
+      .g-slider-control-button {
+        z-index: 3;
+        position: absolute;
+        width: 58px;
+        height: 58px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 58px;
+        color: #fff;
+        font-size: 40px;
+        display: block;
+        transition: color 0.17s ease-in-out, background 0.17s ease-in-out;
+        &.g-slider-control-left {
+          bottom: 0;
+          left: 130px;
+          padding-right:5px;
+        }
+        &.g-slider-control-right {
+          bottom: 0;
+          right: 90px;
+          padding-left:5px;
+        }
+        &:hover {
+          color: #cdcdef;
+          background: #fff;
+        }
+      }
+    }
+    > ul {
+      list-style: none;
+      position: relative;
+      li {
+        max-width: 100%;        
+        display: inline;
+        position: absolute;
+        z-index: 1;
+        top: 70px;
+        left: 485px;
+        right: -485px;
+        bottom: -70px;
+        opacity: 0;
+        transition: opacity 0.13s ease-in-out ,top 0.23s  ease-in , left 0.23s ease-out;  
+        &.g-image-next-active {
+          transition: opacity 0.23s ease-in-out,top 0.23s ease-out , left 0.23s ease-in;
+          display: inline;
+          position: absolute;
+          z-index: 2;
+          top: 70px;
+          left: 485px;
+          right: -485px;
+          bottom: -70px;
+          opacity: 0.3;
+        }
+        &.g-image-active {
+          top: 25px;
+          left: 25px;
+          position: absolute;
+          z-index: 3;
+          opacity: 1;
+        }
+        a {
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
