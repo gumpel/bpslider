@@ -58,9 +58,10 @@ body {
   .g-slider-desriptions {
     > ul {
       list-style: none;
-      li {        
+      li {
+        position: absolute;        
         opacity:0;
-        display: none;
+        visibility: hidden;
         transition: opacity 0.01s ease-in-out;
         &.g-description-active {
           opacity:1;
