@@ -39,6 +39,7 @@ body {
   padding: 50px 0;
   background: #cdcdef;
   font-family: BebasNeueRegular;
+  overflow: hidden;
   .g-slider-count {
     color: white;
     display: block;
@@ -101,11 +102,37 @@ body {
         color: #fff;
         font-size: 40px;
         display: block;
-        transition: color 0.17s ease-in-out, background 0.17s ease-in-out;
+        transition: color 0.17s ease-in-out, background 0.17s ease-in-out,opacity 1s ease-in-out;
+        cursor: pointer;
+        &.g-slider-control-pause {
+          bottom:0;
+          left:50%;
+          font-size:25px;
+          margin-left:-50px;
+          opacity:0.3;
+          transition: opacity 0.2s ease-in-out;
+          &.slider-poused {
+            animation-name: slider-poused;
+            animation-duration: 3s;            
+            opacity:0.5;
+          }
+        }
+
+        &.g-slider-control-play {
+          bottom:0;
+          left:50%;
+          font-size:25px;
+          margin-left:20px;
+          opacity:0.3;
+          transition: opacity 0.2s ease-in-out;
+        }
+
         &.g-slider-control-left {
           bottom: 0;
           left: 130px;
           padding-right:5px;
+
+
         }
         &.g-slider-control-right {
           bottom: 0;
@@ -115,6 +142,7 @@ body {
         &:hover {
           color: #cdcdef;
           background: #fff;
+          opacity:1;
         }
       }
     }
@@ -158,4 +186,15 @@ body {
       }
     }
   }
+}
+
+// Animation 
+
+@keyframes slider-poused {
+    0%  {opacity:1;}
+    20%   {opacity:0.5;}
+    40%  {opacity:1;}
+    60%  {opacity:0.5;}
+    80% {opacity:1;}
+    100% {opacity:0.5;}
 }
